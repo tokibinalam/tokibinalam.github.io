@@ -1,0 +1,1856 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mohammad Toki Bin Alam | Prospective PhD Researcher</title>
+  <meta name="description" content="Personal academic portfolio and research website of Mohammad Toki Bin Alam. B.Sc. in Electrical and Electronic Engineering from BUET. Research in Power Systems, Microgrids, AI/ML, and Automation.">
+  <meta name="keywords" content="Mohammad Toki Bin Alam, BUET EEE, Power Systems, Microgrids, Machine Learning, Inverters, IEEE PEEIACON, PhD Applicant">
+  <meta name="author" content="Mohammad Toki Bin Alam">
+
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Mohammad Toki Bin Alam | Academic Portfolio">
+  <meta property="og:description" content="Electrical & Electronic Engineer (BUET '25) | Research in Smart Grids, Inverters, and Applied AI">
+  <meta property="og:image" content="assets/images/profile.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+
+  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* CSS Variables & Theme */
+    :root {
+      --bg-primary: #07090e;
+      --bg-secondary: #0d111a;
+      --bg-card: rgba(18, 24, 38, 0.7);
+      --bg-card-hover: rgba(26, 34, 52, 0.85);
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --border-glow: rgba(56, 189, 248, 0.35);
+      
+      --text-main: #f1f5f9;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+      
+      --accent-cyan: #38bdf8;
+      --accent-indigo: #6366f1;
+      --accent-emerald: #10b981;
+      --accent-amber: #f59e0b;
+      
+      --gradient-brand: linear-gradient(135deg, #38bdf8 0%, #818cf8 50%, #c084fc 100%);
+      --gradient-card: linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
+      --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.25);
+      --shadow-lg: 0 12px 36px -8px rgba(0, 0, 0, 0.6);
+      
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --radius-sm: 6px;
+      --radius-md: 12px;
+      --radius-lg: 18px;
+      --radius-full: 9999px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--bg-primary);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      line-height: 1.6;
+    }
+
+    body {
+      overflow-x: hidden;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    /* Background Ambient Tech Glows */
+    .ambient-glow {
+      position: fixed;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: -1;
+      filter: blur(140px);
+      opacity: 0.15;
+    }
+    .glow-1 {
+      top: -150px;
+      left: 10%;
+      background: radial-gradient(circle, var(--accent-cyan), transparent);
+    }
+    .glow-2 {
+      top: 40%;
+      right: 5%;
+      background: radial-gradient(circle, var(--accent-indigo), transparent);
+    }
+    .glow-3 {
+      bottom: 10%;
+      left: 20%;
+      background: radial-gradient(circle, var(--accent-emerald), transparent);
+    }
+
+    /* Container */
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Top Navigation */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(7, 9, 14, 0.85);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border-subtle);
+      transition: all 0.3s ease;
+    }
+
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 70px;
+    }
+
+    .nav-logo {
+      font-family: var(--font-mono);
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-main);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav-logo span.accent {
+      color: var(--accent-cyan);
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent-cyan);
+    }
+
+    .nav-btn-cv {
+      background: rgba(56, 189, 248, 0.1);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      color: var(--accent-cyan) !important;
+      padding: 8px 16px;
+      border-radius: var(--radius-full);
+      font-family: var(--font-mono);
+      font-size: 0.82rem !important;
+      transition: all 0.2s ease !important;
+    }
+
+    .nav-btn-cv:hover {
+      background: var(--accent-cyan) !important;
+      color: #000 !important;
+      box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
+    }
+
+    /* Mobile Menu Toggle */
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--text-main);
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 70px 0 60px;
+      position: relative;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 0.9fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .badge-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      background: rgba(56, 189, 248, 0.08);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      border-radius: var(--radius-full);
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--accent-cyan);
+      margin-bottom: 20px;
+    }
+
+    .pulse-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: var(--accent-emerald);
+      box-shadow: 0 0 10px var(--accent-emerald);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(0.95); opacity: 0.8; }
+      50% { transform: scale(1.3); opacity: 1; }
+      100% { transform: scale(0.95); opacity: 0.8; }
+    }
+
+    .hero-title {
+      font-size: 2.85rem;
+      line-height: 1.15;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: 16px;
+    }
+
+    .hero-title .gradient-text {
+      background: var(--gradient-brand);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: 1.25rem;
+      color: var(--text-muted);
+      font-weight: 400;
+      margin-bottom: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .hero-subtitle span.affiliation {
+      color: var(--text-main);
+      font-weight: 600;
+    }
+
+    .hero-bio {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 30px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 36px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 24px;
+      border-radius: var(--radius-md);
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--gradient-brand);
+      color: #050811;
+      border: none;
+      box-shadow: 0 6px 20px rgba(56, 189, 248, 0.25);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 28px rgba(56, 189, 248, 0.4);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-main);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.2);
+      transform: translateY(-2px);
+    }
+
+    /* Stat Cards */
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .stat-num {
+      font-family: var(--font-mono);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--accent-cyan);
+    }
+
+    .stat-lbl {
+      font-size: 0.78rem;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* Profile Card / Photo */
+    .profile-card-wrapper {
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+
+    .profile-frame {
+      position: relative;
+      width: 100%;
+      max-width: 340px;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid var(--border-subtle);
+      box-shadow: var(--shadow-lg);
+      background: var(--bg-card);
+      transition: all 0.3s ease;
+    }
+
+    .profile-frame::before {
+      content: '';
+      position: absolute;
+      inset: -1px;
+      border-radius: var(--radius-lg);
+      padding: 1px;
+      background: linear-gradient(180deg, rgba(56, 189, 248, 0.4), transparent 60%);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
+    }
+
+    .profile-img {
+      width: 100%;
+      height: 380px;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+      filter: contrast(1.03) brightness(0.98);
+      transition: transform 0.4s ease;
+    }
+
+    .profile-frame:hover .profile-img {
+      transform: scale(1.02);
+    }
+
+    .profile-caption {
+      padding: 16px;
+      background: rgba(13, 17, 26, 0.95);
+      border-top: 1px solid var(--border-subtle);
+      font-size: 0.85rem;
+      text-align: center;
+      color: var(--text-muted);
+    }
+
+    .profile-caption strong {
+      color: var(--text-main);
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    /* Section Styling */
+    section {
+      padding: 70px 0;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .section-header {
+      margin-bottom: 40px;
+    }
+
+    .section-tag {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--accent-cyan);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .section-subtitle {
+      color: var(--text-muted);
+      font-size: 1rem;
+      margin-top: 6px;
+    }
+
+    /* Research Interests Grid */
+    .research-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 24px;
+    }
+
+    .research-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .research-card:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--border-glow);
+      transform: translateY(-4px);
+    }
+
+    .research-icon {
+      font-size: 1.8rem;
+      margin-bottom: 14px;
+      display: inline-block;
+    }
+
+    .research-card h3 {
+      font-size: 1.15rem;
+      margin-bottom: 8px;
+      color: var(--text-main);
+    }
+
+    .research-card p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* Publications List */
+    .pub-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      margin-bottom: 24px;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .pub-card:hover {
+      border-color: var(--border-glow);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    .pub-card.highlight {
+      border-left: 4px solid var(--accent-amber);
+    }
+
+    .pub-badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .badge {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      padding: 4px 10px;
+      border-radius: var(--radius-full);
+      font-weight: 500;
+    }
+
+    .badge-ieee {
+      background: rgba(56, 189, 248, 0.15);
+      color: var(--accent-cyan);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+    }
+
+    .badge-award {
+      background: rgba(245, 158, 11, 0.15);
+      color: var(--accent-amber);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .badge-thesis {
+      background: rgba(99, 102, 241, 0.15);
+      color: #a5b4fc;
+      border: 1px solid rgba(99, 102, 241, 0.3);
+    }
+
+    .pub-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 10px;
+      line-height: 1.4;
+    }
+
+    .pub-authors {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+
+    .pub-authors strong {
+      color: var(--accent-cyan);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .pub-venue {
+      font-size: 0.9rem;
+      color: var(--text-dim);
+      font-style: italic;
+      margin-bottom: 14px;
+    }
+
+    .pub-desc {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      margin-bottom: 18px;
+      line-height: 1.6;
+    }
+
+    .pub-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .link-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      color: var(--text-main);
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .link-pill:hover {
+      background: rgba(56, 189, 248, 0.12);
+      border-color: var(--accent-cyan);
+      color: var(--accent-cyan);
+    }
+
+    /* Modal / Lightbox for Certificates & Images */
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(8px);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .modal.active {
+      display: flex;
+    }
+
+    .modal-content {
+      max-width: 800px;
+      width: 100%;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      position: relative;
+      animation: modalFadeIn 0.25s ease;
+    }
+
+    @keyframes modalFadeIn {
+      from { transform: scale(0.95); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .modal-close {
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    .modal-body {
+      padding: 20px;
+      max-height: 80vh;
+      overflow-y: auto;
+      text-align: center;
+    }
+
+    .modal-body img {
+      max-width: 100%;
+      height: auto;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-subtle);
+    }
+
+    .modal-bibtex {
+      background: #05070c;
+      padding: 16px;
+      border-radius: var(--radius-md);
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      color: #93c5fd;
+      text-align: left;
+      white-space: pre-wrap;
+      word-break: break-all;
+      border: 1px solid var(--border-subtle);
+    }
+
+    /* Projects Grid */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 24px;
+    }
+
+    .project-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.3s ease;
+    }
+
+    .project-card:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--border-glow);
+      transform: translateY(-4px);
+    }
+
+    .proj-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .proj-date {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--text-dim);
+    }
+
+    .proj-cat {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--accent-cyan);
+      background: rgba(56, 189, 248, 0.08);
+      padding: 3px 8px;
+      border-radius: 4px;
+    }
+
+    .proj-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: var(--text-main);
+    }
+
+    .proj-desc {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 18px;
+      flex-grow: 1;
+    }
+
+    .proj-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .tag {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--text-dim);
+      background: rgba(255, 255, 255, 0.04);
+      padding: 3px 8px;
+      border-radius: var(--radius-sm);
+    }
+
+    /* Experience Timeline */
+    .timeline {
+      position: relative;
+      border-left: 2px solid rgba(255, 255, 255, 0.08);
+      padding-left: 32px;
+      margin-left: 12px;
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 36px;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: -39px;
+      top: 4px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--accent-cyan);
+      box-shadow: 0 0 10px var(--accent-cyan);
+      border: 3px solid var(--bg-primary);
+    }
+
+    .timeline-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+
+    .timeline-role {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .timeline-org {
+      color: var(--accent-cyan);
+      font-weight: 600;
+    }
+
+    .timeline-time {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--text-dim);
+    }
+
+    .timeline-body ul {
+      list-style-type: none;
+      margin-top: 10px;
+    }
+
+    .timeline-body li {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 8px;
+      position: relative;
+      padding-left: 18px;
+    }
+
+    .timeline-body li::before {
+      content: '▹';
+      position: absolute;
+      left: 0;
+      color: var(--accent-cyan);
+    }
+
+    /* Skills Grid */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .skill-category {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+    }
+
+    .skill-cat-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--text-main);
+    }
+
+    .skill-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .skill-chip {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-subtle);
+      padding: 5px 12px;
+      border-radius: var(--radius-full);
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+      transition: all 0.2s ease;
+    }
+
+    .skill-chip:hover {
+      border-color: var(--accent-cyan);
+      color: var(--accent-cyan);
+      background: rgba(56, 189, 248, 0.08);
+    }
+
+    /* Education & Coursework Cards */
+    .edu-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-bottom: 30px;
+    }
+
+    .edu-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+    }
+
+    .edu-school {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 4px;
+    }
+
+    .edu-degree {
+      color: var(--accent-cyan);
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-bottom: 8px;
+    }
+
+    .edu-meta {
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      color: var(--text-dim);
+      margin-bottom: 12px;
+    }
+
+    .edu-grades {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .grade-tag {
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      color: #34d399;
+      padding: 3px 10px;
+      border-radius: var(--radius-sm);
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+    }
+
+    /* Photo Gallery / Honors Showcase */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+      margin-top: 24px;
+    }
+
+    .gallery-item {
+      position: relative;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--border-subtle);
+      background: var(--bg-card);
+      cursor: pointer;
+      aspect-ratio: 4 / 3;
+      transition: all 0.3s ease;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.05);
+    }
+
+    .gallery-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 40%, rgba(7, 9, 14, 0.95) 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 16px;
+    }
+
+    .gallery-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .gallery-sub {
+      font-size: 0.75rem;
+      color: var(--accent-cyan);
+      font-family: var(--font-mono);
+    }
+
+    /* Contact Section */
+    .contact-card {
+      background: linear-gradient(135deg, rgba(30, 41, 59, 0.6) 0%, rgba(15, 23, 42, 0.8) 100%);
+      border: 1px solid rgba(56, 189, 248, 0.2);
+      border-radius: var(--radius-lg);
+      padding: 48px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-card h2 {
+      font-size: 2.2rem;
+      margin-bottom: 12px;
+      font-weight: 800;
+    }
+
+    .contact-card p {
+      color: var(--text-muted);
+      max-width: 620px;
+      margin: 0 auto 32px;
+      font-size: 1.05rem;
+    }
+
+    .contact-channels {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    /* Toast Notification */
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: var(--accent-emerald);
+      color: #022c22;
+      font-weight: 600;
+      font-family: var(--font-mono);
+      font-size: 0.88rem;
+      padding: 12px 20px;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-lg);
+      display: none;
+      z-index: 2000;
+      animation: toastSlide 0.3s ease;
+    }
+
+    @keyframes toastSlide {
+      from { transform: translateY(20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    /* Footer */
+    footer {
+      padding: 40px 0;
+      border-top: 1px solid var(--border-subtle);
+      text-align: center;
+      color: var(--text-dim);
+      font-size: 0.85rem;
+      font-family: var(--font-mono);
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 36px;
+      }
+      .badge-status {
+        margin: 0 auto 20px;
+      }
+      .hero-subtitle {
+        justify-content: center;
+      }
+      .hero-actions {
+        justify-content: center;
+      }
+      .hero-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+      .edu-grid {
+        grid-template-columns: 1fr;
+      }
+      .profile-card-wrapper {
+        order: -1;
+      }
+      .profile-frame {
+        max-width: 260px;
+      }
+      .profile-img {
+        height: 300px;
+      }
+      .nav-links {
+        display: none;
+      }
+      .menu-toggle {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Ambient Light Accents -->
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+  <div class="ambient-glow glow-3"></div>
+
+  <!-- Top Navigation -->
+  <nav>
+    <div class="container nav-inner">
+      <a href="#" class="nav-logo">
+        <span class="accent">&lt;</span>TokiBinAlam<span class="accent"> /&gt;</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#research">Research & Publications</a></li>
+        <li><a href="#projects">Engineering</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="assets/Mohammad_Toki_Bin_Alam_CV.pdf" target="_blank" class="nav-btn-cv">CV (PDF) ↗</a></li>
+      </ul>
+      <button class="menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle navigation">☰</button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="badge-status">
+          <span class="pulse-dot"></span>
+          Seeking PhD Opportunities & Research Fellowships
+        </div>
+        <h1 class="hero-title">
+          Mohammad <span class="gradient-text">Toki Bin Alam</span>
+        </h1>
+        <div class="hero-subtitle">
+          <span>Electrical & Electronic Engineer</span>
+          <span style="color: var(--text-dim)">•</span>
+          <span class="affiliation">BUET '25</span>
+        </div>
+        <p class="hero-bio">
+          Undergraduate researcher from <strong>Bangladesh University of Engineering and Technology (BUET)</strong> with a thesis grade of <strong>A+</strong> in microgrid power quality disturbance detection. Passionate about intersecting <strong>smart power systems, inverter design, machine learning, and intelligent automation</strong> to build resilient, next-generation energy infrastructure.
+        </p>
+
+        <div class="hero-actions">
+          <a href="assets/Mohammad_Toki_Bin_Alam_CV.pdf" target="_blank" class="btn btn-primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download Full CV (PDF)
+          </a>
+          <a href="mailto:tokibinalam.eee.buet@gmail.com" class="btn btn-secondary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            Get In Touch
+          </a>
+          <a href="https://www.researchgate.net/profile/Mohammad-Bin-Alam" target="_blank" class="btn btn-secondary" title="ResearchGate Profile">
+            ResearchGate ↗
+          </a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-num">A+</span>
+            <span class="stat-lbl">BUET Thesis</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num">2</span>
+            <span class="stat-lbl">Conf. Papers</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num">Best</span>
+            <span class="stat-lbl">Presenter '25</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num">1.2k+</span>
+            <span class="stat-lbl">AI Users</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="profile-card-wrapper">
+        <div class="profile-frame">
+          <img src="assets/images/profile.jpg" alt="Mohammad Toki Bin Alam at BUET EEE" class="profile-img">
+          <div class="profile-caption">
+            <strong>Mohammad Toki Bin Alam</strong>
+            <span>Dept. of EEE, BUET</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- About & Research Interests Section -->
+  <section id="about">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">// 01. Research Interests</span>
+        <h2 class="section-title">Focus Areas for Prospective PhD</h2>
+        <p class="section-subtitle">Bridging electrical power engineering with machine learning and intelligent systems</p>
+      </div>
+
+      <div class="research-grid">
+        <div class="research-card">
+          <div class="research-icon">⚡</div>
+          <h3>Smart Grids & Microgrids</h3>
+          <p>Detection and classification of power quality disturbances (PQDs), microgrid stability under renewable intermittency, and resilient decentralized power management.</p>
+        </div>
+        <div class="research-card">
+          <div class="research-icon">🔌</div>
+          <h3>Power Electronics & Inverters</h3>
+          <p>Multimode inverter control topologies (180° / 120° conduction), gate-driver design, switching losses reduction, and hardware-in-the-loop (HIL) validation.</p>
+        </div>
+        <div class="research-card">
+          <div class="research-icon">🧠</div>
+          <h3>AI/ML for Energy Systems</h3>
+          <p>Self-optimizing SVM, PNN, and deep neural models for fault classification under heavy noise, load forecasting, and automated anomaly diagnostics in power networks.</p>
+        </div>
+        <div class="research-card">
+          <div class="research-icon">🤖</div>
+          <h3>Autonomous Systems & IoT</h3>
+          <p>Vision-guided robotics (YOLOv8 edge inference), real-time sensor fusion with microcontrollers, and IoT-driven remote monitoring architectures.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Publications & Research Section -->
+  <section id="research">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">// 02. Scholarly Contributions</span>
+        <h2 class="section-title">Publications & Research</h2>
+        <p class="section-subtitle">Peer-reviewed conference proceedings, thesis research, and technical reports</p>
+      </div>
+
+      <!-- Publication 1: IEEE PEEIACON -->
+      <article class="pub-card">
+        <div class="pub-badge-row">
+          <span class="badge badge-ieee">IEEE Conference</span>
+          <span class="badge" style="background: rgba(255,255,255,0.06); color: var(--text-dim)">PEEIACON 2025</span>
+        </div>
+        <h3 class="pub-title">Three-Phase Inverter with Changeable 180° and 120° Conduction Modes</h3>
+        <p class="pub-authors">
+          A. Y. M. E. Sadiq, M. Abid, <strong>M. T. B. Alam</strong>, M. Z. Hossain, and M. R. H. Shawn
+        </p>
+        <p class="pub-venue">
+          4th IEEE International Conference on Power, Electrical, Electronics & Industrial Applications (PEEIACON), Dhaka, Bangladesh, Dec 2025.
+        </p>
+        <p class="pub-desc">
+          Proposed and experimentally prototyped a low-cost, microcontroller-less three-phase inverter with switchable 180° and 120° conduction modes using discrete digital shift registers, 555 timing gates, and IR2104 MOSFET drivers. Validated through Proteus simulation and laboratory hardware tests.
+        </p>
+        <div class="pub-links">
+          <a href="https://doi.org/10.1109/PEEIACON69360.2025.11750711" target="_blank" class="link-pill">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            DOI: 10.1109/PEEIACON69360.2025.11750711
+          </a>
+          <button class="link-pill" onclick="openCertModal('assets/images/ieee-certificate.jpg', 'IEEE PEEIACON 2025 Certificate of Appreciation')">
+            📜 Certificate of Appreciation
+          </button>
+          <button class="link-pill" onclick="openBibtexModal('sadiq2025three')">
+            📋 BibTeX
+          </button>
+        </div>
+      </article>
+
+      <!-- Publication 2: ICTSE 2025 Best Presenter -->
+      <article class="pub-card highlight">
+        <div class="pub-badge-row">
+          <span class="badge badge-award">★ Best Presenter Award</span>
+          <span class="badge" style="background: rgba(255,255,255,0.06); color: var(--text-dim)">ICTSE 2025</span>
+        </div>
+        <h3 class="pub-title">Enhancing Traceability, Accountability, and Sustainability in the Textile Industry through Blockchain Technology</h3>
+        <p class="pub-authors">
+          <strong>M. T. B. Alam</strong> and L. Noushin
+        </p>
+        <p class="pub-venue">
+          3rd International Conference on Textile Science and Engineering (ICTSE), Bangladesh University of Textiles, Dhaka, May 2025.
+        </p>
+        <p class="pub-desc">
+          Formulated a distributed ledger architecture leveraging smart contracts to provide immutable provenance tracking, audit-proofing, and carbon accountability across multi-tier industrial supply chains. Recognized with the <strong>Best Presenter Award</strong>.
+        </p>
+        <div class="pub-links">
+          <button class="link-pill" onclick="openCertModal('assets/images/ictse-award.jpg', 'Best Presenter Award Ceremony - ICTSE 2025')">
+            🏆 Award Ceremony Photo
+          </button>
+          <button class="link-pill" onclick="openCertModal('assets/images/ictse-poster.jpg', 'Conference Poster Presentation - ICTSE 2025')">
+            🖼️ Poster Presentation
+          </button>
+          <button class="link-pill" onclick="openBibtexModal('alam2025blockchain')">
+            📋 BibTeX
+          </button>
+        </div>
+      </article>
+
+      <!-- Undergraduate Thesis -->
+      <article class="pub-card">
+        <div class="pub-badge-row">
+          <span class="badge badge-thesis">Undergraduate Thesis • Grade: A+</span>
+          <span class="badge" style="background: rgba(255,255,255,0.06); color: var(--text-dim)">BUET EEE 2024–2025</span>
+        </div>
+        <h3 class="pub-title">Detection & Classification of Power Quality Disturbances in Microgrids using Self-Optimized SVM and PNN Models</h3>
+        <p class="pub-authors">
+          <strong>Mohammad Toki Bin Alam</strong> (Supervised at Department of EEE, BUET)
+        </p>
+        <p class="pub-desc">
+          Formulated advanced signal-processing feature extractors coupled with probabilistic neural networks (PNN) and self-optimized support vector machines (SVM). Achieved <strong>96% classification accuracy</strong> across voltage sags, swells, harmonics, and transients even under severe signal-to-noise ratio (SNR) conditions. Awarded the top thesis grade of <strong>A+</strong>.
+        </p>
+        <div class="pub-links">
+          <button class="link-pill" onclick="openCertModal('assets/images/buet-defense-team.jpg', 'Undergraduate Thesis Defense with Committee and Supervisor')">
+            👥 Defense Team & Supervisor
+          </button>
+        </div>
+      </article>
+
+      <!-- Technical Report -->
+      <article class="pub-card">
+        <div class="pub-badge-row">
+          <span class="badge" style="background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3)">Technical Report</span>
+          <span class="badge" style="background: rgba(255,255,255,0.06); color: var(--text-dim)">Sep 2024</span>
+        </div>
+        <h3 class="pub-title">IoT and Blockchain Framework for Bangladesh’s Fresh Produce Export Supply Chain</h3>
+        <p class="pub-authors">With L. Noushin</p>
+        <p class="pub-desc">
+          Comprehensive feasibility study detailing sensor-integrated telemetry nodes, real-time temperature/humidity monitoring, and distributed verification to reduce post-harvest loss in agricultural export corridors.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Engineering & Software Projects -->
+  <section id="projects">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">// 03. Engineering Portfolio</span>
+        <h2 class="section-title">Selected Projects</h2>
+        <p class="section-subtitle">Hardware circuit prototypes, power system simulations, and software platforms</p>
+      </div>
+
+      <div class="projects-grid">
+        <!-- Autonomous Robot -->
+        <div class="project-card">
+          <div>
+            <div class="proj-meta">
+              <span class="proj-cat">Robotics / AI</span>
+              <span class="proj-date">Dec 2023 – Jun 2025</span>
+            </div>
+            <h3 class="proj-title">Autonomous Fire Detection & Extinguishing Robot</h3>
+            <p class="proj-desc">
+              Designed firmware and vision pipeline for an autonomous tracked robot: real-time YOLOv8 flame and smoke detection executed on an onboard Raspberry Pi, communicating via UART with an Arduino running Embedded C for motor control and flame-suppression actuators.
+            </p>
+          </div>
+          <div class="proj-tags">
+            <span class="tag">YOLOv8</span>
+            <span class="tag">Raspberry Pi</span>
+            <span class="tag">Arduino</span>
+            <span class="tag">Embedded C</span>
+          </div>
+        </div>
+
+        <!-- Find My Professor -->
+        <div class="project-card">
+          <div>
+            <div class="proj-meta">
+              <span class="proj-cat">AI / SaaS</span>
+              <span class="proj-date">Sep 2026 – Present</span>
+            </div>
+            <h3 class="proj-title">Find My Professor (profreach.trinism.tech)</h3>
+            <p class="proj-desc">
+              Co-built an AI academic research assistant for Master's and PhD candidates. Analyzes faculty publications, calculates research vector similarity with the applicant, drafts contextual outreach grounded in cited papers, and tailors CVs. Attracted <strong>1,200+ registered applicants within 20 days</strong>.
+            </p>
+          </div>
+          <div class="proj-tags">
+            <span class="tag">LLM Agents</span>
+            <span class="tag">Vector Search</span>
+            <span class="tag">RAG</span>
+            <span class="tag">n8n</span>
+          </div>
+        </div>
+
+        <!-- 3-Phase Inverter -->
+        <div class="project-card">
+          <div>
+            <div class="proj-meta">
+              <span class="proj-cat">Hardware / Power</span>
+              <span class="proj-date">Jul 2023</span>
+            </div>
+            <h3 class="proj-title">Three-Phase Inverter (Discrete Logic)</h3>
+            <p class="proj-desc">
+              Constructed a robust three-phase inverter using pure discrete logic without a microcontroller. Gated with a 555 oscillator, CD4035 4-stage shift register, and IR2104 high/low side gate drivers, enabling seamless switching between 180° and 120° modes.
+            </p>
+          </div>
+          <div class="proj-tags">
+            <span class="tag">Proteus</span>
+            <span class="tag">IR2104 Drivers</span>
+            <span class="tag">Analog/Digital Logic</span>
+          </div>
+        </div>
+
+        <!-- Load Flow Analysis -->
+        <div class="project-card">
+          <div>
+            <div class="proj-meta">
+              <span class="proj-cat">Power Systems</span>
+              <span class="proj-date">Feb – Aug 2023</span>
+            </div>
+            <h3 class="proj-title">Load Flow & Fault Analysis of IEEE 13-Bus System</h3>
+            <p class="proj-desc">
+              Executed Newton-Raphson load flow simulations in MATLAB and CYME PSAF for bus voltage profiles, real/reactive power losses, and branch line flows. Reconfigured network topologies to elevate load-bus voltages and suppress symmetrical short-circuit fault levels.
+            </p>
+          </div>
+          <div class="proj-tags">
+            <span class="tag">MATLAB</span>
+            <span class="tag">CYME PSAF</span>
+            <span class="tag">Power Systems</span>
+          </div>
+        </div>
+
+        <!-- Isolated Word Recognition -->
+        <div class="project-card">
+          <div>
+            <div class="proj-meta">
+              <span class="proj-cat">DSP / Audio ML</span>
+              <span class="proj-date">Jul 2022</span>
+            </div>
+            <h3 class="proj-title">Isolated Word Recognition Using MFCC</h3>
+            <p class="proj-desc">
+              Designed a keyword classification system in MATLAB across multi-speaker acoustic recordings. Extracted Mel-Frequency Cepstral Coefficients (MFCC) and spectrogram vectors to classify spoken commands with Euclidean distance matching.
+            </p>
+          </div>
+          <div class="proj-tags">
+            <span class="tag">DSP</span>
+            <span class="tag">MFCC</span>
+            <span class="tag">Acoustic Processing</span>
+          </div>
+        </div>
+
+        <!-- IoT Brooder -->
+        <div class="project-card">
+          <div>
+            <div class="proj-meta">
+              <span class="proj-cat">IoT / Embedded</span>
+              <span class="proj-date">Jul 2023</span>
+            </div>
+            <h3 class="proj-title">Microcontroller & IoT-Based Climate Brooder</h3>
+            <p class="proj-desc">
+              Automated poultry brooder enclosure with closed-loop microclimate regulation (temperature and humidity feedback), automated feeding actuators, and telemetry uploaded to a cloud dashboard.
+            </p>
+          </div>
+          <div class="proj-tags">
+            <span class="tag">Sensors</span>
+            <span class="tag">Cloud Telemetry</span>
+            <span class="tag">Embedded C</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Professional Experience -->
+  <section id="experience">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">// 04. Career Experience</span>
+        <h2 class="section-title">Industry & Leadership Experience</h2>
+        <p class="section-subtitle">Real-world systems engineering, data pipelines, and automation</p>
+      </div>
+
+      <div class="timeline">
+        <!-- Trine AI Studio -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-header">
+            <div>
+              <span class="timeline-role">Co-Founder & Automation Lead</span>
+              <span style="color: var(--text-dim)">at</span>
+              <span class="timeline-org">Trine AI Studio</span>
+            </div>
+            <span class="timeline-time">Sep 2026 – Present • Dhaka</span>
+          </div>
+          <div class="timeline-body">
+            <ul>
+              <li>Co-founded an AI automation studio orchestrating end-to-end client systems with n8n, self-hosted Docker clusters, and custom API microservices.</li>
+              <li>Engineered and scaled <strong>Find My Professor</strong> (profreach.trinism.tech), enabling Master's and PhD aspirants to analyze faculty publications and craft high-context outreach; surpassed 1,200 active users in 20 days.</li>
+              <li>Architected automated lead scoring and web automation pipelines with webhook retry queues, token-budgeted LLM workflows, and maintainable documentation.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Commure Inc. Launch QA -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-header">
+            <div>
+              <span class="timeline-role">Data Operations Analyst (Launch QA)</span>
+              <span style="color: var(--text-dim)">at</span>
+              <span class="timeline-org">Commure Inc. ($7B US Healthcare Tech)</span>
+            </div>
+            <span class="timeline-time">Jun 2026 – Oct 2026 • Dhaka</span>
+          </div>
+          <div class="timeline-body">
+            <ul>
+              <li>Led end-to-end data quality validation for high-stakes enterprise hospital client launches, audit-proofing mission-critical revenue cycle workflows.</li>
+              <li>Conducted root-cause analysis on early-stage financial reconciliation anomalies, identifying edge-case ingestion faults before final client signoff.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Commure Inc. Submissions Core -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-header">
+            <div>
+              <span class="timeline-role">Data Operations Analyst (Submissions Core)</span>
+              <span style="color: var(--text-dim)">at</span>
+              <span class="timeline-org">Commure Inc.</span>
+            </div>
+            <span class="timeline-time">Jan 2026 – May 2026 • Dhaka</span>
+          </div>
+          <div class="timeline-body">
+            <ul>
+              <li>Developed 10 Retool operational dashboards and 4 automated API workflows, replacing high-overhead manual claim verification.</li>
+              <li>Maintained <strong>99% EHR data extraction reliability</strong> and reduced import error rates down to 5% across hospital sites, consistently hitting P90 benchmark targets.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education & Coursework -->
+  <section id="education">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">// 05. Academic Background</span>
+        <h2 class="section-title">Education & Credentials</h2>
+        <p class="section-subtitle">Rigorous foundational and advanced engineering coursework</p>
+      </div>
+
+      <div class="edu-grid">
+        <div class="edu-card">
+          <h3 class="edu-school">Bangladesh University of Engineering and Technology (BUET)</h3>
+          <p class="edu-degree">B.Sc. in Electrical and Electronic Engineering</p>
+          <p class="edu-meta">Feb 2020 – Mar 2025 • Dhaka, Bangladesh</p>
+          <div class="edu-grades">
+            <span class="grade-tag">Thesis Grade: A+</span>
+            <span class="grade-tag">CGPA: 3.05 / 4.00</span>
+            <span class="grade-tag" style="background: rgba(56, 189, 248, 0.1); border-color: rgba(56, 189, 248, 0.3); color: var(--accent-cyan)">BUET Technical Stipend (2020–2025)</span>
+          </div>
+        </div>
+
+        <div class="edu-card">
+          <h3 class="edu-school">Notre Dame College</h3>
+          <p class="edu-degree">Higher Secondary Certificate (HSC) — Science</p>
+          <p class="edu-meta">2017 – 2019 • Dhaka, Bangladesh</p>
+          <div class="edu-grades">
+            <span class="grade-tag">GPA: 5.00 / 5.00 (Golden / Top Tier)</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="skill-category">
+        <h4 style="font-size: 1.05rem; margin-bottom: 12px; color: var(--text-main);">Comprehensive Coursework & Labs:</h4>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; font-size: 0.88rem; color: var(--text-muted);">
+          <div>
+            <strong style="color: var(--accent-cyan); display: block; margin-bottom: 4px;">⚡ Power & Energy</strong>
+            Power Electronics, Power Systems I & II, Power System Protection, High Voltage Eng., Smart Grid, Energy Conversion I & II, Nuclear Power Eng.
+          </div>
+          <div>
+            <strong style="color: var(--accent-cyan); display: block; margin-bottom: 4px;">🔬 Circuits & Electronics</strong>
+            Electrical Circuits I & II, Electronic Circuits I & II, Digital Electronics, Solid State Devices, Engineering Electromagnetics.
+          </div>
+          <div>
+            <strong style="color: var(--accent-cyan); display: block; margin-bottom: 4px;">📡 Signals & Computing</strong>
+            Continuous & Linear Systems, DSP, Control Systems I, Communication Systems, Microprocessors & Embedded Systems, C/C++, Numerical Techniques.
+          </div>
+          <div>
+            <strong style="color: var(--accent-cyan); display: block; margin-bottom: 4px;">📐 Mathematics</strong>
+            Calculus I & II, Ordinary & Partial Differential Equations, Linear Algebra, Probability & Statistics.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Skills -->
+  <section id="skills">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">// 06. Technical Toolkit</span>
+        <h2 class="section-title">Skills & Proficiencies</h2>
+        <p class="section-subtitle">Laboratory instrumentation, engineering simulation, programming, and AI</p>
+      </div>
+
+      <div class="skills-grid">
+        <div class="skill-category">
+          <div class="skill-cat-title">🧠 AI & Machine Learning</div>
+          <div class="skill-chips">
+            <span class="skill-chip">PyTorch</span>
+            <span class="skill-chip">SVM & PNN</span>
+            <span class="skill-chip">YOLOv8</span>
+            <span class="skill-chip">RAG & Vector Stores</span>
+            <span class="skill-chip">LLM Agents</span>
+            <span class="skill-chip">DSP / Feature Extraction</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-cat-title">⚡ Power & Hardware Design</div>
+          <div class="skill-chips">
+            <span class="skill-chip">MATLAB / Simulink</span>
+            <span class="skill-chip">Proteus</span>
+            <span class="skill-chip">CYME PSAF</span>
+            <span class="skill-chip">HOMER Pro</span>
+            <span class="skill-chip">Arduino & Raspberry Pi</span>
+            <span class="skill-chip">Embedded C</span>
+            <span class="skill-chip">AutoCAD</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-cat-title">💻 Data & Cloud Systems</div>
+          <div class="skill-chips">
+            <span class="skill-chip">Python (Pandas, NumPy)</span>
+            <span class="skill-chip">SQL</span>
+            <span class="skill-chip">Retool Dashboards</span>
+            <span class="skill-chip">n8n Automation</span>
+            <span class="skill-chip">REST APIs & Webhooks</span>
+            <span class="skill-chip">Docker</span>
+            <span class="skill-chip">Linux Administration</span>
+            <span class="skill-chip">Git / GitHub</span>
+            <span class="skill-chip">LaTeX</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Honors, Leadership & Extracurriculars Gallery -->
+  <section id="honors">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">// 07. Honors & Extracurriculars</span>
+        <h2 class="section-title">Leadership & Recognition</h2>
+        <p class="section-subtitle">Conference honors, university leadership, and campus community engagement</p>
+      </div>
+
+      <div class="gallery-grid">
+        <div class="gallery-item" onclick="openCertModal('assets/images/ictse-award.jpg', 'Best Presenter Award at 3rd ICTSE Conference 2025')">
+          <img src="assets/images/ictse-award.jpg" alt="Best Presenter Award ICTSE 2025">
+          <div class="gallery-overlay">
+            <div class="gallery-title">Best Presenter Award</div>
+            <div class="gallery-sub">ICTSE 2025 Conference</div>
+          </div>
+        </div>
+
+        <div class="gallery-item" onclick="openCertModal('assets/images/ieee-certificate.jpg', 'IEEE PEEIACON 2025 Certificate of Appreciation')">
+          <img src="assets/images/ieee-certificate.jpg" alt="IEEE Certificate">
+          <div class="gallery-overlay">
+            <div class="gallery-title">IEEE Authorship</div>
+            <div class="gallery-sub">PEEIACON 2025 Certificate</div>
+          </div>
+        </div>
+
+        <div class="gallery-item" onclick="openCertModal('assets/images/ictse-poster.jpg', 'Conference Poster Presentation with Co-author')">
+          <img src="assets/images/ictse-poster.jpg" alt="ICTSE Poster Presentation">
+          <div class="gallery-overlay">
+            <div class="gallery-title">Poster Session</div>
+            <div class="gallery-sub">Blockchain in Textile Supply Chains</div>
+          </div>
+        </div>
+
+        <div class="gallery-item" onclick="openCertModal('assets/images/buet-defense-team.jpg', 'Undergraduate Thesis Defense Team at BUET')">
+          <img src="assets/images/buet-defense-team.jpg" alt="BUET Defense Team">
+          <div class="gallery-overlay">
+            <div class="gallery-title">BUET Thesis Defense</div>
+            <div class="gallery-sub">Grade: A+ (Microgrid PQD)</div>
+          </div>
+        </div>
+
+        <div class="gallery-item" onclick="openCertModal('assets/images/music-performance.jpg', 'Musical Performance at BUET Sher-e-Bangla Hall Event')">
+          <img src="assets/images/music-performance.jpg" alt="Acoustic Performance at BUET">
+          <div class="gallery-overlay">
+            <div class="gallery-title">Musical Performance</div>
+            <div class="gallery-sub">Sher-e-Bangla Hall Cultural Night</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top: 30px; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px;">
+        <div class="research-card">
+          <h4 style="color: var(--accent-amber); margin-bottom: 6px;">🏆 Honors & Awards</h4>
+          <p style="font-size: 0.9rem; color: var(--text-muted);">
+            • <strong>Best Presenter Award</strong>, 3rd International Conference on Textile Science & Engineering (ICTSE 2025)<br>
+            • <strong>Champion</strong>, ISCEA Supply Chain Case Competition 2024 (60% CSCA scholarship)<br>
+            • <strong>BUET Technical Stipend</strong> (Merit-based financial award, 2020 – 2025)
+          </p>
+        </div>
+
+        <div class="research-card">
+          <h4 style="color: var(--accent-cyan); margin-bottom: 6px;">🏛️ University Leadership</h4>
+          <p style="font-size: 0.9rem; color: var(--text-muted);">
+            • <strong>Hall Representative</strong>, Sher-e-Bangla Hall, BUET (Dec 2023 – Jun 2024): Organized corporate sponsorship and logistics for 4,000+ attendee university events.<br>
+            • <strong>Publication Secretary</strong>, BUET Dance Club (2022 – 2024)
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact & PhD Inquiries -->
+  <section id="contact">
+    <div class="container">
+      <div class="contact-card">
+        <span class="section-tag" style="margin-bottom: 12px;">// Let's Connect</span>
+        <h2>Interested in Collaboration or PhD Advising?</h2>
+        <p>
+          I am actively preparing applications for PhD programs starting Fall 2026 / Spring 2027. If you are a prospective advisor, researcher, or grant collaborator working in smart grids, power electronics, or applied machine learning, I would welcome the opportunity to discuss research alignment.
+        </p>
+
+        <div class="contact-channels">
+          <a href="mailto:tokibinalam.eee.buet@gmail.com" class="btn btn-primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            tokibinalam.eee.buet@gmail.com
+          </a>
+          <button class="btn btn-secondary" onclick="copyEmail()">
+            📋 Copy Email
+          </button>
+          <a href="https://linkedin.com/in/tokibinalam" target="_blank" class="btn btn-secondary">
+            LinkedIn ↗
+          </a>
+          <a href="https://github.com/tokibinalam" target="_blank" class="btn btn-secondary">
+            GitHub ↗
+          </a>
+          <a href="https://www.researchgate.net/profile/Mohammad-Bin-Alam" target="_blank" class="btn btn-secondary">
+            ResearchGate ↗
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>© 2026 Mohammad Toki Bin Alam. Built with a sleek dark-mode academic aesthetic.</p>
+      <p style="margin-top: 6px; font-size: 0.78rem;">Hosted on GitHub Pages • Department of EEE, BUET</p>
+    </div>
+  </footer>
+
+  <!-- Lightbox Modal for Certificates and Photos -->
+  <div id="imageModal" class="modal" onclick="closeModalOnBackdrop(event)">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 id="modalTitle" style="color: var(--text-main); font-size: 1rem;">Document Preview</h4>
+        <button class="modal-close" onclick="closeModal()">×</button>
+      </div>
+      <div class="modal-body">
+        <img id="modalImg" src="" alt="Certificate Preview">
+      </div>
+    </div>
+  </div>
+
+  <!-- BibTeX Modal -->
+  <div id="bibtexModal" class="modal" onclick="closeModalOnBackdrop(event)">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 style="color: var(--text-main); font-size: 1rem;">BibTeX Citation</h4>
+        <button class="modal-close" onclick="closeBibtexModal()">×</button>
+      </div>
+      <div class="modal-body">
+        <div id="bibtexContent" class="modal-bibtex"></div>
+        <button class="btn btn-primary" style="margin-top: 16px; width: 100%; justify-content: center;" onclick="copyBibtex()">
+          📋 Copy Citation to Clipboard
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast">Copied to clipboard!</div>
+
+  <script>
+    // BibTeX Data
+    const bibtexData = {
+      sadiq2025three: `@inproceedings{sadiq2025three,
+  title     = {Three-Phase Inverter with Changeable 180° and 120° Conduction Modes},
+  author    = {Sadiq, Abu Yousuf Md. Eftekhar and Abid, Mushfiquzzaman and Alam, Mohammad Toki Bin and Hossain, Zonayed Mohammad and Shawn, Md. Ramim Hassan},
+  booktitle = {4th IEEE International Conference on Power, Electrical, Electronics & Industrial Applications (PEEIACON)},
+  location  = {Dhaka, Bangladesh},
+  year      = {2025},
+  month     = {December},
+  doi       = {10.1109/PEEIACON69360.2025.11750711}
+}`,
+      alam2025blockchain: `@inproceedings{alam2025blockchain,
+  title     = {Enhancing Traceability, Accountability, and Sustainability in the Textile Industry through Blockchain Technology},
+  author    = {Alam, Mohammad Toki Bin and Noushin, Lamia},
+  booktitle = {3rd International Conference on Textile Science and Engineering (ICTSE)},
+  location  = {Dhaka, Bangladesh},
+  year      = {2025},
+  month     = {May},
+  note      = {Best Presenter Award}
+}`
+    };
+
+    let activeBibtex = '';
+
+    function openCertModal(imageSrc, title) {
+      document.getElementById('modalImg').src = imageSrc;
+      document.getElementById('modalTitle').textContent = title;
+      document.getElementById('imageModal').classList.add('active');
+    }
+
+    function closeModal() {
+      document.getElementById('imageModal').classList.remove('active');
+    }
+
+    function openBibtexModal(key) {
+      activeBibtex = bibtexData[key] || '';
+      document.getElementById('bibtexContent').textContent = activeBibtex;
+      document.getElementById('bibtexModal').classList.add('active');
+    }
+
+    function closeBibtexModal() {
+      document.getElementById('bibtexModal').classList.remove('active');
+    }
+
+    function closeModalOnBackdrop(e) {
+      if (e.target.classList.contains('modal')) {
+        closeModal();
+        closeBibtexModal();
+      }
+    }
+
+    function copyBibtex() {
+      navigator.clipboard.writeText(activeBibtex).then(() => {
+        showToast('BibTeX copied to clipboard!');
+      });
+    }
+
+    function copyEmail() {
+      navigator.clipboard.writeText('tokibinalam.eee.buet@gmail.com').then(() => {
+        showToast('Email copied to clipboard!');
+      });
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      toast.textContent = msg;
+      toast.style.display = 'block';
+      setTimeout(() => {
+        toast.style.display = 'none';
+      }, 2500);
+    }
+
+    function toggleMobileMenu() {
+      const links = document.querySelector('.nav-links');
+      if (links.style.display === 'flex') {
+        links.style.display = 'none';
+      } else {
+        links.style.display = 'flex';
+        links.style.flexDirection = 'column';
+        links.style.position = 'absolute';
+        links.style.top = '70px';
+        links.style.left = '0';
+        links.style.right = '0';
+        links.style.background = '#07090e';
+        links.style.padding = '24px';
+        links.style.borderBottom = '1px solid var(--border-subtle)';
+      }
+    }
+
+    // Escape key closes modals
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeModal();
+        closeBibtexModal();
+      }
+    });
+  </script>
+</body>
+</html>
