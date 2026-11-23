@@ -42,7 +42,6 @@
       --accent-amber: #f59e0b;
       
       --gradient-brand: linear-gradient(135deg, #38bdf8 0%, #818cf8 50%, #c084fc 100%);
-      --gradient-card: linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
       --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.25);
       --shadow-lg: 0 12px 36px -8px rgba(0, 0, 0, 0.6);
       
@@ -74,7 +73,7 @@
       position: relative;
     }
 
-    /* Background Ambient Tech Glows */
+    /* Ambient Tech Glows */
     .ambient-glow {
       position: fixed;
       width: 600px;
@@ -108,7 +107,7 @@
       padding: 0 24px;
     }
 
-    /* Top Navigation */
+    /* Navigation */
     nav {
       position: sticky;
       top: 0;
@@ -145,7 +144,7 @@
     .nav-links {
       display: flex;
       list-style: none;
-      gap: 28px;
+      gap: 24px;
       align-items: center;
     }
 
@@ -178,7 +177,6 @@
       box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
     }
 
-    /* Mobile Menu Toggle */
     .menu-toggle {
       display: none;
       background: none;
@@ -311,7 +309,7 @@
       transform: translateY(-2px);
     }
 
-    /* Stat Cards */
+    /* Stats */
     .hero-stats {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -339,7 +337,7 @@
       letter-spacing: 0.05em;
     }
 
-    /* Profile Card / Photo */
+    /* Profile Frame */
     .profile-card-wrapper {
       position: relative;
       display: flex;
@@ -432,7 +430,7 @@
       margin-top: 6px;
     }
 
-    /* Research Interests Grid */
+    /* Research Grid */
     .research-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -446,8 +444,6 @@
       border-radius: var(--radius-md);
       padding: 24px;
       transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
     }
 
     .research-card:hover {
@@ -474,6 +470,78 @@
       line-height: 1.6;
     }
 
+    /* Experience Timeline */
+    .timeline {
+      position: relative;
+      border-left: 2px solid rgba(255, 255, 255, 0.08);
+      padding-left: 32px;
+      margin-left: 12px;
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 36px;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: -39px;
+      top: 4px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--accent-cyan);
+      box-shadow: 0 0 10px var(--accent-cyan);
+      border: 3px solid var(--bg-primary);
+    }
+
+    .timeline-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+
+    .timeline-role {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .timeline-org {
+      color: var(--accent-cyan);
+      font-weight: 600;
+    }
+
+    .timeline-time {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--text-dim);
+    }
+
+    .timeline-body ul {
+      list-style-type: none;
+      margin-top: 12px;
+    }
+
+    .timeline-body li {
+      font-size: 0.93rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      margin-bottom: 10px;
+      position: relative;
+      padding-left: 20px;
+    }
+
+    .timeline-body li::before {
+      content: '▹';
+      position: absolute;
+      left: 0;
+      color: var(--accent-cyan);
+    }
+
     /* Publications List */
     .pub-card {
       background: var(--bg-card);
@@ -482,7 +550,6 @@
       padding: 28px;
       margin-bottom: 24px;
       transition: all 0.3s ease;
-      position: relative;
     }
 
     .pub-card:hover {
@@ -592,82 +659,6 @@
       color: var(--accent-cyan);
     }
 
-    /* Modal / Lightbox for Certificates & Images */
-    .modal {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.85);
-      backdrop-filter: blur(8px);
-      z-index: 1000;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-    }
-
-    .modal.active {
-      display: flex;
-    }
-
-    .modal-content {
-      max-width: 800px;
-      width: 100%;
-      background: var(--bg-secondary);
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      position: relative;
-      animation: modalFadeIn 0.25s ease;
-    }
-
-    @keyframes modalFadeIn {
-      from { transform: scale(0.95); opacity: 0; }
-      to { transform: scale(1); opacity: 1; }
-    }
-
-    .modal-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 16px 20px;
-      border-bottom: 1px solid var(--border-subtle);
-    }
-
-    .modal-close {
-      background: none;
-      border: none;
-      color: var(--text-muted);
-      font-size: 1.5rem;
-      cursor: pointer;
-    }
-
-    .modal-body {
-      padding: 20px;
-      max-height: 80vh;
-      overflow-y: auto;
-      text-align: center;
-    }
-
-    .modal-body img {
-      max-width: 100%;
-      height: auto;
-      border-radius: var(--radius-md);
-      border: 1px solid var(--border-subtle);
-    }
-
-    .modal-bibtex {
-      background: #05070c;
-      padding: 16px;
-      border-radius: var(--radius-md);
-      font-family: var(--font-mono);
-      font-size: 0.82rem;
-      color: #93c5fd;
-      text-align: left;
-      white-space: pre-wrap;
-      word-break: break-all;
-      border: 1px solid var(--border-subtle);
-    }
-
     /* Projects Grid */
     .projects-grid {
       display: grid;
@@ -744,125 +735,6 @@
       border-radius: var(--radius-sm);
     }
 
-    /* Experience Timeline */
-    .timeline {
-      position: relative;
-      border-left: 2px solid rgba(255, 255, 255, 0.08);
-      padding-left: 32px;
-      margin-left: 12px;
-    }
-
-    .timeline-item {
-      position: relative;
-      margin-bottom: 36px;
-    }
-
-    .timeline-dot {
-      position: absolute;
-      left: -39px;
-      top: 4px;
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      background: var(--accent-cyan);
-      box-shadow: 0 0 10px var(--accent-cyan);
-      border: 3px solid var(--bg-primary);
-    }
-
-    .timeline-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 6px;
-    }
-
-    .timeline-role {
-      font-size: 1.15rem;
-      font-weight: 700;
-      color: var(--text-main);
-    }
-
-    .timeline-org {
-      color: var(--accent-cyan);
-      font-weight: 600;
-    }
-
-    .timeline-time {
-      font-family: var(--font-mono);
-      font-size: 0.8rem;
-      color: var(--text-dim);
-    }
-
-    .timeline-body ul {
-      list-style-type: none;
-      margin-top: 10px;
-    }
-
-    .timeline-body li {
-      font-size: 0.92rem;
-      color: var(--text-muted);
-      line-height: 1.6;
-      margin-bottom: 8px;
-      position: relative;
-      padding-left: 18px;
-    }
-
-    .timeline-body li::before {
-      content: '▹';
-      position: absolute;
-      left: 0;
-      color: var(--accent-cyan);
-    }
-
-    /* Skills Grid */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-
-    .skill-category {
-      background: var(--bg-card);
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-lg);
-      padding: 24px;
-    }
-
-    .skill-cat-title {
-      font-size: 1.05rem;
-      font-weight: 600;
-      margin-bottom: 14px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      color: var(--text-main);
-    }
-
-    .skill-chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .skill-chip {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid var(--border-subtle);
-      padding: 5px 12px;
-      border-radius: var(--radius-full);
-      font-size: 0.82rem;
-      color: var(--text-muted);
-      font-family: var(--font-mono);
-      transition: all 0.2s ease;
-    }
-
-    .skill-chip:hover {
-      border-color: var(--accent-cyan);
-      color: var(--accent-cyan);
-      background: rgba(56, 189, 248, 0.08);
-    }
-
     /* Education & Coursework Cards */
     .edu-grid {
       display: grid;
@@ -915,7 +787,54 @@
       font-size: 0.8rem;
     }
 
-    /* Photo Gallery / Honors Showcase */
+    /* Skills Grid */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .skill-category {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+    }
+
+    .skill-cat-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--text-main);
+    }
+
+    .skill-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .skill-chip {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-subtle);
+      padding: 5px 12px;
+      border-radius: var(--radius-full);
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+      transition: all 0.2s ease;
+    }
+
+    .skill-chip:hover {
+      border-color: var(--accent-cyan);
+      color: var(--accent-cyan);
+      background: rgba(56, 189, 248, 0.08);
+    }
+
+    /* Photo Gallery */
     .gallery-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -967,7 +886,7 @@
       font-family: var(--font-mono);
     }
 
-    /* Contact Section */
+    /* Contact Card */
     .contact-card {
       background: linear-gradient(135deg, rgba(30, 41, 59, 0.6) 0%, rgba(15, 23, 42, 0.8) 100%);
       border: 1px solid rgba(56, 189, 248, 0.2);
@@ -998,7 +917,83 @@
       gap: 16px;
     }
 
-    /* Toast Notification */
+    /* Modal / Lightbox */
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(8px);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .modal.active {
+      display: flex;
+    }
+
+    .modal-content {
+      max-width: 800px;
+      width: 100%;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      position: relative;
+      animation: modalFadeIn 0.25s ease;
+    }
+
+    @keyframes modalFadeIn {
+      from { transform: scale(0.95); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .modal-close {
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    .modal-body {
+      padding: 20px;
+      max-height: 80vh;
+      overflow-y: auto;
+      text-align: center;
+    }
+
+    .modal-body img {
+      max-width: 100%;
+      height: auto;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-subtle);
+    }
+
+    .modal-bibtex {
+      background: #05070c;
+      padding: 16px;
+      border-radius: var(--radius-md);
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      color: #93c5fd;
+      text-align: left;
+      white-space: pre-wrap;
+      word-break: break-all;
+      border: 1px solid var(--border-subtle);
+    }
+
+    /* Toast */
     .toast {
       position: fixed;
       bottom: 24px;
@@ -1087,9 +1082,9 @@
       </a>
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
-        <li><a href="#research">Research & Publications</a></li>
-        <li><a href="#projects">Engineering</a></li>
         <li><a href="#experience">Experience</a></li>
+        <li><a href="#research">Scholarly Contributions</a></li>
+        <li><a href="#projects">Selected Projects</a></li>
         <li><a href="#education">Education</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -1131,6 +1126,9 @@
           <a href="https://www.researchgate.net/profile/Mohammad-Bin-Alam" target="_blank" class="btn btn-secondary" title="ResearchGate Profile">
             ResearchGate ↗
           </a>
+          <a href="https://linkedin.com/in/tokibinalam" target="_blank" class="btn btn-secondary" title="LinkedIn Profile">
+            LinkedIn ↗
+          </a>
         </div>
 
         <div class="hero-stats">
@@ -1165,7 +1163,7 @@
     </div>
   </header>
 
-  <!-- About & Research Interests Section -->
+  <!-- 1. About & Research Interests Section -->
   <section id="about">
     <div class="container">
       <div class="section-header">
@@ -1199,11 +1197,68 @@
     </div>
   </section>
 
-  <!-- Publications & Research Section -->
+  <!-- 2. Experience Section (Moved to #2) -->
+  <section id="experience">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">// 02. Professional Experience</span>
+        <h2 class="section-title">Industry & Engineering Experience</h2>
+        <p class="section-subtitle">Real-world systems engineering, automated data pipelines, and intelligent operations</p>
+      </div>
+
+      <div class="timeline">
+        <!-- Trine AI Studio -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-header">
+            <div>
+              <span class="timeline-role">Co-Founder & Automation Lead</span>
+              <span style="color: var(--text-dim)">at</span>
+              <span class="timeline-org">Trine AI Studio</span>
+            </div>
+            <span class="timeline-time">Sep 2026 – Present • Dhaka, Bangladesh</span>
+          </div>
+          <div class="timeline-body">
+            <ul>
+              <li>Co-founded an AI automation studio; own client scoping, solution design, build, and deployment end-to-end, with n8n as the core orchestration layer.</li>
+              <li>Co-built and launched <strong>Find My Professor</strong> (profreach.trinism.tech), an AI research assistant for Master’s and PhD applicants that ranks faculty by research fit, drafts emails grounded in each professor’s own papers, and tailors CVs; surpassed <strong>1,200+ sign-ups within 20 days of launch</strong>.</li>
+              <li>Delivered a lead scoring and generation web app for a real estate client: Tally form intake feeding an n8n pipeline that qualifies, scores, and routes inbound leads automatically, replacing manual triage.</li>
+              <li>Scoped and delivered a browser-automation bot for an architecture firm client that bulk-downloads 3D assets from a vendor site, removing a repetitive manual workflow.</li>
+              <li>Self-host n8n in Docker with ngrok tunnels for webhook testing; instrument live workflows with retry and failure handling, credential-scoped API access, and versioned documentation.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Commure Inc. (Single unified entry) -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-header">
+            <div>
+              <span class="timeline-role">Data Operations Analyst</span>
+              <span style="color: var(--text-dim)">at</span>
+              <span class="timeline-org">Commure Inc. (US-based healthcare technology company valued at $7B)</span>
+            </div>
+            <span class="timeline-time">Jan 2026 – Oct 2026 • Dhaka, Bangladesh</span>
+          </div>
+          <div class="timeline-body">
+            <ul>
+              <li>Led end-to-end QA validation for high-priority client launch sites, audit-proofing revenue cycle workflows across onboarding phases.</li>
+              <li>Ran root-cause analysis on early-stage financial reconciliation, isolating workflow friction points before full site handoff.</li>
+              <li>Built 10 Retool dashboards and 4 API-driven workflows for the submissions pipeline; 2 workflows now clean claim-level errors and submit claims automatically, removing the bulk of manual submission labor.</li>
+              <li>Owned the end-to-end submissions process, achieving <strong>99% EHR extraction</strong> and cutting import errors to 5% across client sites in a single quarter, consistently meeting P90 benchmark OKRs.</li>
+              <li>Translated front-end operational requirements into structured documentation with engineering, reducing extraction discrepancies and stabilizing submission volumes.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Scholarly Contributions (Moved to #3) -->
   <section id="research">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">// 02. Scholarly Contributions</span>
+        <span class="section-tag">// 03. Scholarly Contributions</span>
         <h2 class="section-title">Publications & Research</h2>
         <p class="section-subtitle">Peer-reviewed conference proceedings, thesis research, and technical reports</p>
       </div>
@@ -1222,7 +1277,7 @@
           4th IEEE International Conference on Power, Electrical, Electronics & Industrial Applications (PEEIACON), Dhaka, Bangladesh, Dec 2025.
         </p>
         <p class="pub-desc">
-          Proposed and experimentally prototyped a low-cost, microcontroller-less three-phase inverter with switchable 180° and 120° conduction modes using discrete digital shift registers, 555 timing gates, and IR2104 MOSFET drivers. Validated through Proteus simulation and laboratory hardware tests.
+          Designed, simulated (Proteus) and built a low-cost three-phase inverter without a microcontroller, gated by a 555 timer, CD4035 shift register, and IR2104 MOSFET drivers, with switchable 180° and 120° conduction.
         </p>
         <div class="pub-links">
           <a href="https://doi.org/10.1109/PEEIACON69360.2025.11750711" target="_blank" class="link-pill">
@@ -1252,7 +1307,7 @@
           3rd International Conference on Textile Science and Engineering (ICTSE), Bangladesh University of Textiles, Dhaka, May 2025.
         </p>
         <p class="pub-desc">
-          Formulated a distributed ledger architecture leveraging smart contracts to provide immutable provenance tracking, audit-proofing, and carbon accountability across multi-tier industrial supply chains. Recognized with the <strong>Best Presenter Award</strong>.
+          Formulated a blockchain-based traceability and accountability framework across industrial supply chain workflows. Recognized with the prestigious <strong>Best Presenter Award</strong>.
         </p>
         <div class="pub-links">
           <button class="link-pill" onclick="openCertModal('assets/images/ictse-award.jpg', 'Best Presenter Award Ceremony - ICTSE 2025')">
@@ -1271,14 +1326,14 @@
       <article class="pub-card">
         <div class="pub-badge-row">
           <span class="badge badge-thesis">Undergraduate Thesis • Grade: A+</span>
-          <span class="badge" style="background: rgba(255,255,255,0.06); color: var(--text-dim)">BUET EEE 2024–2025</span>
+          <span class="badge" style="background: rgba(255,255,255,0.06); color: var(--text-dim)">BUET 2024–2025</span>
         </div>
         <h3 class="pub-title">Detection & Classification of Power Quality Disturbances in Microgrids using Self-Optimized SVM and PNN Models</h3>
         <p class="pub-authors">
-          <strong>Mohammad Toki Bin Alam</strong> (Supervised at Department of EEE, BUET)
+          <strong>Mohammad Toki Bin Alam</strong> (Department of EEE, BUET)
         </p>
         <p class="pub-desc">
-          Formulated advanced signal-processing feature extractors coupled with probabilistic neural networks (PNN) and self-optimized support vector machines (SVM). Achieved <strong>96% classification accuracy</strong> across voltage sags, swells, harmonics, and transients even under severe signal-to-noise ratio (SNR) conditions. Awarded the top thesis grade of <strong>A+</strong>.
+          Detected power quality disturbances in microgrids with a self-optimised SVM and PNN model; achieved <strong>96% classification accuracy</strong> under heavy noise. Thesis grade: <strong>A+</strong>.
         </p>
         <div class="pub-links">
           <button class="link-pill" onclick="openCertModal('assets/images/buet-defense-team.jpg', 'Undergraduate Thesis Defense with Committee and Supervisor')">
@@ -1293,22 +1348,22 @@
           <span class="badge" style="background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3)">Technical Report</span>
           <span class="badge" style="background: rgba(255,255,255,0.06); color: var(--text-dim)">Sep 2024</span>
         </div>
-        <h3 class="pub-title">IoT and Blockchain Framework for Bangladesh’s Fresh Produce Export Supply Chain</h3>
+        <h3 class="pub-title">IoT and Blockchain for Bangladesh’s Fresh Produce Export Supply Chain</h3>
         <p class="pub-authors">With L. Noushin</p>
         <p class="pub-desc">
-          Comprehensive feasibility study detailing sensor-integrated telemetry nodes, real-time temperature/humidity monitoring, and distributed verification to reduce post-harvest loss in agricultural export corridors.
+          Proposed an IoT and blockchain framework for traceability, quality control, and post-harvest loss in produce exports.
         </p>
       </article>
     </div>
   </section>
 
-  <!-- Engineering & Software Projects -->
+  <!-- 4. Selected Projects (Moved to #4) -->
   <section id="projects">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">// 03. Engineering Portfolio</span>
-        <h2 class="section-title">Selected Projects</h2>
-        <p class="section-subtitle">Hardware circuit prototypes, power system simulations, and software platforms</p>
+        <span class="section-tag">// 04. Selected Projects</span>
+        <h2 class="section-title">Engineering Portfolio</h2>
+        <p class="section-subtitle">Hardware prototypes, power network simulations, and embedded software systems</p>
       </div>
 
       <div class="projects-grid">
@@ -1319,9 +1374,9 @@
               <span class="proj-cat">Robotics / AI</span>
               <span class="proj-date">Dec 2023 – Jun 2025</span>
             </div>
-            <h3 class="proj-title">Autonomous Fire Detection & Extinguishing Robot</h3>
+            <h3 class="proj-title">Autonomous Fire Detection & Extinguishing Robot (YOLOv8)</h3>
             <p class="proj-desc">
-              Designed firmware and vision pipeline for an autonomous tracked robot: real-time YOLOv8 flame and smoke detection executed on an onboard Raspberry Pi, communicating via UART with an Arduino running Embedded C for motor control and flame-suppression actuators.
+              Led design and firmware for a vision-guided robot: YOLOv8 fire detection and decision-making on a Raspberry Pi, with an Arduino in Embedded C driving motion and extinguishing.
             </p>
           </div>
           <div class="proj-tags">
@@ -1341,7 +1396,7 @@
             </div>
             <h3 class="proj-title">Find My Professor (profreach.trinism.tech)</h3>
             <p class="proj-desc">
-              Co-built an AI academic research assistant for Master's and PhD candidates. Analyzes faculty publications, calculates research vector similarity with the applicant, drafts contextual outreach grounded in cited papers, and tailors CVs. Attracted <strong>1,200+ registered applicants within 20 days</strong>.
+              Co-built and launched an AI research assistant for Master’s and PhD applicants that ranks faculty by research fit, drafts emails grounded in each professor’s own papers, and tailors the CV; 1,200+ sign-ups within 20 days of launch.
             </p>
           </div>
           <div class="proj-tags">
@@ -1359,15 +1414,16 @@
               <span class="proj-cat">Hardware / Power</span>
               <span class="proj-date">Jul 2023</span>
             </div>
-            <h3 class="proj-title">Three-Phase Inverter (Discrete Logic)</h3>
+            <h3 class="proj-title">Three-Phase Inverter Using Discrete Logic and Gate Driver Circuits</h3>
             <p class="proj-desc">
-              Constructed a robust three-phase inverter using pure discrete logic without a microcontroller. Gated with a 555 oscillator, CD4035 4-stage shift register, and IR2104 high/low side gate drivers, enabling seamless switching between 180° and 120° modes.
+              Designed, simulated (Proteus) and built a low-cost three-phase inverter without a microcontroller, gated by a 555 timer, CD4035 shift register, and IR2104 MOSFET drivers, with switchable 180° and 120° conduction.
             </p>
           </div>
           <div class="proj-tags">
             <span class="tag">Proteus</span>
-            <span class="tag">IR2104 Drivers</span>
-            <span class="tag">Analog/Digital Logic</span>
+            <span class="tag">555 Timer</span>
+            <span class="tag">IR2104</span>
+            <span class="tag">CD4035</span>
           </div>
         </div>
 
@@ -1378,15 +1434,15 @@
               <span class="proj-cat">Power Systems</span>
               <span class="proj-date">Feb – Aug 2023</span>
             </div>
-            <h3 class="proj-title">Load Flow & Fault Analysis of IEEE 13-Bus System</h3>
+            <h3 class="proj-title">Load Flow and Fault Analysis of the IEEE 13-Bus System</h3>
             <p class="proj-desc">
-              Executed Newton-Raphson load flow simulations in MATLAB and CYME PSAF for bus voltage profiles, real/reactive power losses, and branch line flows. Reconfigured network topologies to elevate load-bus voltages and suppress symmetrical short-circuit fault levels.
+              Ran Newton–Raphson load flow in MATLAB and CYME PSAF for bus voltages, losses, and line flows; modified the network to raise load-bus voltages and reduce symmetrical fault current.
             </p>
           </div>
           <div class="proj-tags">
             <span class="tag">MATLAB</span>
             <span class="tag">CYME PSAF</span>
-            <span class="tag">Power Systems</span>
+            <span class="tag">Newton–Raphson</span>
           </div>
         </div>
 
@@ -1394,18 +1450,19 @@
         <div class="project-card">
           <div>
             <div class="proj-meta">
-              <span class="proj-cat">DSP / Audio ML</span>
+              <span class="proj-cat">DSP / Audio</span>
               <span class="proj-date">Jul 2022</span>
             </div>
             <h3 class="proj-title">Isolated Word Recognition Using MFCC</h3>
             <p class="proj-desc">
-              Designed a keyword classification system in MATLAB across multi-speaker acoustic recordings. Extracted Mel-Frequency Cepstral Coefficients (MFCC) and spectrogram vectors to classify spoken commands with Euclidean distance matching.
+              Built a keyword-detection system in MATLAB on a multi-speaker voice database, extracting MFCC and Mel-spectrogram features and matching new speakers to the nearest keyword.
             </p>
           </div>
           <div class="proj-tags">
             <span class="tag">DSP</span>
             <span class="tag">MFCC</span>
-            <span class="tag">Acoustic Processing</span>
+            <span class="tag">Mel-Spectrogram</span>
+            <span class="tag">MATLAB</span>
           </div>
         </div>
 
@@ -1416,93 +1473,79 @@
               <span class="proj-cat">IoT / Embedded</span>
               <span class="proj-date">Jul 2023</span>
             </div>
-            <h3 class="proj-title">Microcontroller & IoT-Based Climate Brooder</h3>
+            <h3 class="proj-title">Microcontroller and IoT-Based Chicken Brooder</h3>
             <p class="proj-desc">
-              Automated poultry brooder enclosure with closed-loop microclimate regulation (temperature and humidity feedback), automated feeding actuators, and telemetry uploaded to a cloud dashboard.
+              Automated brooder with temperature and humidity sensing, automatic feeding and watering, and an IoT remote-monitoring dashboard.
             </p>
           </div>
           <div class="proj-tags">
             <span class="tag">Sensors</span>
-            <span class="tag">Cloud Telemetry</span>
+            <span class="tag">IoT Dashboard</span>
             <span class="tag">Embedded C</span>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- Professional Experience -->
-  <section id="experience">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">// 04. Career Experience</span>
-        <h2 class="section-title">Industry & Leadership Experience</h2>
-        <p class="section-subtitle">Real-world systems engineering, data pipelines, and automation</p>
-      </div>
-
-      <div class="timeline">
-        <!-- Trine AI Studio -->
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-header">
-            <div>
-              <span class="timeline-role">Co-Founder & Automation Lead</span>
-              <span style="color: var(--text-dim)">at</span>
-              <span class="timeline-org">Trine AI Studio</span>
+        <!-- Fire Detection ADC -->
+        <div class="project-card">
+          <div>
+            <div class="proj-meta">
+              <span class="proj-cat">Digital Electronics</span>
+              <span class="proj-date">Dec 2023</span>
             </div>
-            <span class="timeline-time">Sep 2026 – Present • Dhaka</span>
+            <h3 class="proj-title">Fire Detection System with Custom ADC and Magnitude Comparator</h3>
+            <p class="proj-desc">
+              Digital-electronics fire alarm built around a custom-designed analog-to-digital converter and magnitude comparator.
+            </p>
           </div>
-          <div class="timeline-body">
-            <ul>
-              <li>Co-founded an AI automation studio orchestrating end-to-end client systems with n8n, self-hosted Docker clusters, and custom API microservices.</li>
-              <li>Engineered and scaled <strong>Find My Professor</strong> (profreach.trinism.tech), enabling Master's and PhD aspirants to analyze faculty publications and craft high-context outreach; surpassed 1,200 active users in 20 days.</li>
-              <li>Architected automated lead scoring and web automation pipelines with webhook retry queues, token-budgeted LLM workflows, and maintainable documentation.</li>
-            </ul>
+          <div class="proj-tags">
+            <span class="tag">Custom ADC</span>
+            <span class="tag">Comparator</span>
+            <span class="tag">Digital Logic</span>
           </div>
         </div>
 
-        <!-- Commure Inc. Launch QA -->
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-header">
-            <div>
-              <span class="timeline-role">Data Operations Analyst (Launch QA)</span>
-              <span style="color: var(--text-dim)">at</span>
-              <span class="timeline-org">Commure Inc. ($7B US Healthcare Tech)</span>
+        <!-- Wireless Monitor -->
+        <div class="project-card">
+          <div>
+            <div class="proj-meta">
+              <span class="proj-cat">IoT / Cloud</span>
+              <span class="proj-date">Mar 2023</span>
             </div>
-            <span class="timeline-time">Jun 2026 – Oct 2026 • Dhaka</span>
+            <h3 class="proj-title">Wireless Thermometer and Humidity Monitor</h3>
+            <p class="proj-desc">
+              Arduino sensor node streaming real-time temperature and humidity over Wi-Fi to the ThingSpeak cloud.
+            </p>
           </div>
-          <div class="timeline-body">
-            <ul>
-              <li>Led end-to-end data quality validation for high-stakes enterprise hospital client launches, audit-proofing mission-critical revenue cycle workflows.</li>
-              <li>Conducted root-cause analysis on early-stage financial reconciliation anomalies, identifying edge-case ingestion faults before final client signoff.</li>
-            </ul>
+          <div class="proj-tags">
+            <span class="tag">Arduino</span>
+            <span class="tag">ThingSpeak</span>
+            <span class="tag">Wi-Fi Telemetry</span>
           </div>
         </div>
 
-        <!-- Commure Inc. Submissions Core -->
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-header">
-            <div>
-              <span class="timeline-role">Data Operations Analyst (Submissions Core)</span>
-              <span style="color: var(--text-dim)">at</span>
-              <span class="timeline-org">Commure Inc.</span>
+        <!-- BUET Power Plant -->
+        <div class="project-card">
+          <div>
+            <div class="proj-meta">
+              <span class="proj-cat">Power Generation</span>
+              <span class="proj-date">Feb 2023</span>
             </div>
-            <span class="timeline-time">Jan 2026 – May 2026 • Dhaka</span>
+            <h3 class="proj-title">Study of the BUET Power Plant</h3>
+            <p class="proj-desc">
+              Technical report on the generation and distribution setup of BUET’s on-campus power plant.
+            </p>
           </div>
-          <div class="timeline-body">
-            <ul>
-              <li>Developed 10 Retool operational dashboards and 4 automated API workflows, replacing high-overhead manual claim verification.</li>
-              <li>Maintained <strong>99% EHR data extraction reliability</strong> and reduced import error rates down to 5% across hospital sites, consistently hitting P90 benchmark targets.</li>
-            </ul>
+          <div class="proj-tags">
+            <span class="tag">Generation</span>
+            <span class="tag">Distribution</span>
+            <span class="tag">Power Systems</span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Education & Coursework -->
+  <!-- 5. Education & Coursework -->
   <section id="education">
     <div class="container">
       <div class="section-header">
@@ -1528,36 +1571,36 @@
           <p class="edu-degree">Higher Secondary Certificate (HSC) — Science</p>
           <p class="edu-meta">2017 – 2019 • Dhaka, Bangladesh</p>
           <div class="edu-grades">
-            <span class="grade-tag">GPA: 5.00 / 5.00 (Golden / Top Tier)</span>
+            <span class="grade-tag">GPA: 5.00 / 5.00</span>
           </div>
         </div>
       </div>
 
       <div class="skill-category">
-        <h4 style="font-size: 1.05rem; margin-bottom: 12px; color: var(--text-main);">Comprehensive Coursework & Labs:</h4>
+        <h4 style="font-size: 1.05rem; margin-bottom: 12px; color: var(--text-main);">Comprehensive Coursework & Laboratory Experience:</h4>
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; font-size: 0.88rem; color: var(--text-muted);">
           <div>
             <strong style="color: var(--accent-cyan); display: block; margin-bottom: 4px;">⚡ Power & Energy</strong>
-            Power Electronics, Power Systems I & II, Power System Protection, High Voltage Eng., Smart Grid, Energy Conversion I & II, Nuclear Power Eng.
+            Power Electronics, Power Systems I & II, Power System Operation and Control, Power Transmission and Distribution, Power System Protection, High Voltage Engineering, Smart Grid, Energy Conversion I & II, Nuclear Power Engineering.
           </div>
           <div>
             <strong style="color: var(--accent-cyan); display: block; margin-bottom: 4px;">🔬 Circuits & Electronics</strong>
-            Electrical Circuits I & II, Electronic Circuits I & II, Digital Electronics, Solid State Devices, Engineering Electromagnetics.
+            Electrical Circuits I & II, Electronic Circuits I & II, Digital Electronics, Solid State Devices, Electrical Properties of Materials, Engineering Electromagnetics.
           </div>
           <div>
-            <strong style="color: var(--accent-cyan); display: block; margin-bottom: 4px;">📡 Signals & Computing</strong>
-            Continuous & Linear Systems, DSP, Control Systems I, Communication Systems, Microprocessors & Embedded Systems, C/C++, Numerical Techniques.
+            <strong style="color: var(--accent-cyan); display: block; margin-bottom: 4px;">📡 Signals & Control</strong>
+            Continuous Signals and Linear Systems, Digital Signal Processing I, Control Systems I, Communication Systems I & II.
           </div>
           <div>
-            <strong style="color: var(--accent-cyan); display: block; margin-bottom: 4px;">📐 Mathematics</strong>
-            Calculus I & II, Ordinary & Partial Differential Equations, Linear Algebra, Probability & Statistics.
+            <strong style="color: var(--accent-cyan); display: block; margin-bottom: 4px;">💻 Computing & Mathematics</strong>
+            Computer Programming, Microprocessors and Embedded Systems, Calculus I & II, ODE & PDE, Linear Algebra, Probability and Statistics.
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Technical Skills -->
+  <!-- 6. Technical Skills -->
   <section id="skills">
     <div class="container">
       <div class="section-header">
@@ -1574,7 +1617,8 @@
             <span class="skill-chip">SVM & PNN</span>
             <span class="skill-chip">YOLOv8</span>
             <span class="skill-chip">RAG & Vector Stores</span>
-            <span class="skill-chip">LLM Agents</span>
+            <span class="skill-chip">LLM API Integration</span>
+            <span class="skill-chip">AI Agents (LangChain)</span>
             <span class="skill-chip">DSP / Feature Extraction</span>
           </div>
         </div>
@@ -1587,22 +1631,23 @@
             <span class="skill-chip">CYME PSAF</span>
             <span class="skill-chip">HOMER Pro</span>
             <span class="skill-chip">Arduino & Raspberry Pi</span>
+            <span class="skill-chip">C / C++</span>
             <span class="skill-chip">Embedded C</span>
             <span class="skill-chip">AutoCAD</span>
           </div>
         </div>
 
         <div class="skill-category">
-          <div class="skill-cat-title">💻 Data & Cloud Systems</div>
+          <div class="skill-cat-title">💻 Data & Deployment Systems</div>
           <div class="skill-chips">
             <span class="skill-chip">Python (Pandas, NumPy)</span>
             <span class="skill-chip">SQL</span>
             <span class="skill-chip">Retool Dashboards</span>
+            <span class="skill-chip">Power BI</span>
             <span class="skill-chip">n8n Automation</span>
             <span class="skill-chip">REST APIs & Webhooks</span>
             <span class="skill-chip">Docker</span>
             <span class="skill-chip">Linux Administration</span>
-            <span class="skill-chip">Git / GitHub</span>
             <span class="skill-chip">LaTeX</span>
           </div>
         </div>
@@ -1610,7 +1655,7 @@
     </div>
   </section>
 
-  <!-- Honors, Leadership & Extracurriculars Gallery -->
+  <!-- 7. Honors, Leadership & Gallery -->
   <section id="honors">
     <div class="container">
       <div class="section-header">
@@ -1666,7 +1711,7 @@
           <h4 style="color: var(--accent-amber); margin-bottom: 6px;">🏆 Honors & Awards</h4>
           <p style="font-size: 0.9rem; color: var(--text-muted);">
             • <strong>Best Presenter Award</strong>, 3rd International Conference on Textile Science & Engineering (ICTSE 2025)<br>
-            • <strong>Champion</strong>, ISCEA Supply Chain Case Competition 2024 (60% CSCA scholarship)<br>
+            • <strong>Champion</strong>, ISCEA Supply Chain Case Competition 2024 (awarded a 60% scholarship toward ISCEA CSCA certification)<br>
             • <strong>BUET Technical Stipend</strong> (Merit-based financial award, 2020 – 2025)
           </p>
         </div>
@@ -1674,7 +1719,7 @@
         <div class="research-card">
           <h4 style="color: var(--accent-cyan); margin-bottom: 6px;">🏛️ University Leadership</h4>
           <p style="font-size: 0.9rem; color: var(--text-muted);">
-            • <strong>Hall Representative</strong>, Sher-e-Bangla Hall, BUET (Dec 2023 – Jun 2024): Organized corporate sponsorship and logistics for 4,000+ attendee university events.<br>
+            • <strong>Hall Representative</strong>, Sher-e-Bangla Hall, BUET (Dec 2023 – Jun 2024): secured corporate sponsorship and ran end-to-end logistics for two ceremonies and a 4,000+ participant Iftar initiative.<br>
             • <strong>Publication Secretary</strong>, BUET Dance Club (2022 – 2024)
           </p>
         </div>
@@ -1703,9 +1748,6 @@
           <a href="https://linkedin.com/in/tokibinalam" target="_blank" class="btn btn-secondary">
             LinkedIn ↗
           </a>
-          <a href="https://github.com/tokibinalam" target="_blank" class="btn btn-secondary">
-            GitHub ↗
-          </a>
           <a href="https://www.researchgate.net/profile/Mohammad-Bin-Alam" target="_blank" class="btn btn-secondary">
             ResearchGate ↗
           </a>
@@ -1717,8 +1759,8 @@
   <!-- Footer -->
   <footer>
     <div class="container">
-      <p>© 2026 Mohammad Toki Bin Alam. Built with a sleek dark-mode academic aesthetic.</p>
-      <p style="margin-top: 6px; font-size: 0.78rem;">Hosted on GitHub Pages • Department of EEE, BUET</p>
+      <p>© 2026 Mohammad Toki Bin Alam. All rights reserved.</p>
+      <p style="margin-top: 6px; font-size: 0.78rem;">Department of EEE, Bangladesh University of Engineering and Technology (BUET)</p>
     </div>
   </footer>
 
